@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}Produtos{% endblock %}
+
+{% block content %}
+    <h1>Produtos</h1>
+    <form action="{{ url_for('produto.formProduto') }}" method="GET">
+        <button type="submit" class="btn btn-primary">Novo Produto!</button>
+    </form>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Descrição</th>
+                <th scope="col">Foto</th>
+                <th scope="col">Valor Unitário</th>
+                <th scope="col">Ação</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if result %}
+            {% for row in result %}
+            <tr>
+                <th scope="row">{{ row['id_produto'] }}</th>
+                <td>{{ row['nome'] }}</td>
+                <td>{{ row['descricao'] }}</td>
+                <td><img src="{{ row['foto'] }}" alt="Foto do Produto" width="50"></td>
+                <td>{{ row['valor_unitario'] }}</td>
+                <td>
+                    <a href="#"><i class="fas fa-edit"></i></a>
+                    <a href="#"><i class="fas fa-trash"></i></a>
+                </td>
+            </tr>
+            {% endfor %}
+            {% endif %}
+        </tbody>
+    </table>
+{% endblock %}

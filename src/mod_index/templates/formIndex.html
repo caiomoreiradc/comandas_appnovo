@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <h1 class="display-4">Home</h1>
+
+    <ul class="list-group mt-3">
+        <li class="list-group-item"><i class="fas fa-home me-2"></i><a href="{{ url_for('index.formListaIndex') }}"  class="text-danger">Home</a></li>
+        <li class="list-group-item"><i class="fa fa-id-card me-2"></i><a href="{{ url_for('funcionario.formListaFuncionario') }}"  class="text-danger">Funcionários</a></li>
+        <li class="list-group-item"><i class="fa fa-user me-2"></i><a href="{{ url_for('cliente.formListaCliente') }}"  class="text-danger">Clientes</a></li>
+        <li class="list-group-item"><i class="fa fa fa-shopping-cart me-2"></i><a href="{{ url_for('produto.formListaProduto') }} " class="text-danger">Produtos</a></li>
+    </ul>
+{% endblock %}
