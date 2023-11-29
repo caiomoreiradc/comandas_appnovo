@@ -8,8 +8,8 @@
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light ">
-        <a class="navbar-brand m-2" href="{{ url_for('index.formListaIndex') }}">Pastelaria</a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark ">
+        <a class="navbar-brand m-2 text-white"  href="{{ url_for('index.formListaIndex') }}">Pastelaria</a>
     </nav>
 
     <div class="container mt-3 flex">
@@ -23,19 +23,6 @@
         </div>
     </div>
 
-    {% if request.args.get('msg'): %}
-    <h3>{{ request.args.get('msg') }}</h3>
-    <br>
-    {% elif msg: %}
-    <h3>{{ msg }}</h3>
-    <br>
-    {% elif request.args.get('msgErro'): %}
-    <h3>{{ request.args.get('msgErro') }}</h3>
-    <br>
-    {% elif msgErro: %}
-    <h3>{{ msgErro }}</h3>
-    <br>
-    {% endif %}
 
  
 

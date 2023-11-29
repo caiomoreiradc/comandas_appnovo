@@ -1,7 +1,10 @@
 from flask import Blueprint, render_template
-bp_index = Blueprint('index', __name__, url_prefix="/", template_folder='templates')
+from mod_login.login import validaSessao
+
+bp_index = Blueprint('index', __name__, url_prefix="/home", template_folder='templates')
 
 ''' rotas dos formulários '''
-@bp_index.route('/')
+@bp_index.route('/home')
+
 def formListaIndex():
     return render_template('formIndex.html'), 200

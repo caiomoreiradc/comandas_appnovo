@@ -5,7 +5,7 @@
 {% block content %}
     <h1 class="display-4">Clientes</h1>
     <form action="{{ url_for('cliente.formCliente') }}" method="GET">
-        <button class="btn btn-primary mb-3">Novo Cliente</button>
+        <button class="btn btn-dark mb-3">Novo Cliente</button>
     </form>
 
     <div class="table-responsive">
@@ -34,8 +34,8 @@
                     <td>{{ row['dia_fiado'] }}</td>
                     <td>{{ row['senha'] }}</td>
                     <td>
-                        <a href="#"><i class="fas fa-edit"></i></a>
-                        <a href="#"><i class="fas fa-trash"></i></a>
+                        <a href="#"><i class="fas fa-edit text-dark"></i></a>
+                        <a href="#"><i class="fas fa-trash text-dark"></i></a>
                     </td>
                 </tr>
                 {% endfor %}
